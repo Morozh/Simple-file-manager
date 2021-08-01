@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+*:before {
+    box-sizing: border-box;
+}
+
+*:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.75;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+	opacity: 1;
+	color: #000000;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a259f7;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+}
+
+.main-container {
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.main__file-manager {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+.main__file-manager-left {
+    width: 100%;
+    border: 1px solid #7800FF;
+    position: relative;
+    padding-bottom: 50px;
+    margin-right: 20px;
+}
+
+.main__file-directory {
+    color: #000000;
+    display: block;
+    text-align: left;
+}
+
+.main__file-manager-right {
+    width: 100%;
+    border: 1px solid #7800FF;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+#top {
+    height: 30px;
+    padding: 0 5px;
+}
+
+.main__file-directory {
+    color: #000000;
+    display: block;
+    text-align: left;
+}
+
+.main__logo img {
+    margin-right: 10px;
+}
+
+.new-dir {
+    color: #000000;
+    margin-right: 10px;
+}
+
+.main__file-manager-btn {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #7800FF;
+    background-color: #FFFFFF;
+}
+
+.file-manager__btn {
+    text-decoration: none;
+    min-width: 100px;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 3px;
+    background: #7800FF;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    margin: 10px 30px 10px 0; 
+}
+
+input[type="submit"] {
+    text-decoration: none;
+    min-width: 100px;
+    height: 30px;
+    padding: 2px 10px;
+    border: 0;
+    border-radius: 3px;
+    background: #7800FF;
+    color: #FFFFFF;
+    font-weight: 400;
+    line-height: 1.75;
+    margin-left: 10px;
+}
+
+input[type="text"] {
+    text-decoration: none;
+    height: 30px;
+    padding: 0 10px;
+    border: 0;
+    box-shadow: 0 0 0 2px #a259f7;
+    border-radius: 3px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+input[type="submit"]:hover {
+    background: #6805da;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #a259f7;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #a259f7;
+}
+
+.main-top__new-folder {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.file-manager__btn:last-child {
+    margin-right: 0;
+}
+
+.file-manager__btn:hover {
+    background: #6805da;
+}
+
+.file-manager__btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #a259f7;
+}
+
+.is_dir .size {
+    color:transparent;
+}
+
+.is_dir .download {
+    visibility: hidden
+}
+
+a.delete {
+    display: inline-block;
+    color: #d00;	
+    margin-left: 15px;
+    font-size: 11px;
+    padding: 0 0 0 13px;
+}
+
+.name {
+	background: url('../icons/copy.png') no-repeat scroll 10px 20px;
+	padding: 15px 0 10px 40px;
+}
+
+.is_dir .name {
+	background: url('../icons/folder.png') no-repeat scroll 10px 20px;
+}
+
+a[href $='.png'], a[href $='.jpg'], a[href $='.jpeg'] {
+    background: url('../icons/photo.png') no-repeat scroll 10px 20px;
+}
+
+a[href $='.mp3'] {
+    background: url('../icons/mp3.png') no-repeat scroll 10px 20px;
+}
+
+a[href $='.exe'] {
+    background: url('../icons/exe.png') no-repeat scroll 10px 20px;
+}
+
+a[href $='.txt'] {
+    background: url('../icons/copy.png') no-repeat scroll 10px 20px;
+}
+
+.empty {
+    padding: 15px 0 10px 20px !important;
+    width: 150px;
+}
+
+.first {
+    text-align: left;
+    padding-top: 0;
+}
+
+.first .name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 200px;
+    text-overflow: ellipsis;
+}
+
+.main__file-container {
+    overflow-y: auto;
+    height: 500px;
+    max-height: 700px;
+}
+
+.main__file-container thead {
+    position: absolute;
+    top: 25px;
+}
+
+.main__file-container tbody {
+    display: block;
+    padding-top: 40px;
+}
+
+#table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table-two {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+}
+
+table thead {
+    max-width: 600px;
+    width: 100%;
+    border-bottom: 1px solid #7800FF;
+    border-top: 1px solid #7800FF;
+    background-color: #f1e1ff;
+    z-index: 4;
+    position: relative;
+}
+
+thead th {
+    font-weight: 400;
+    color: #7800FF;
+    padding: .5em .5em .5em .2em;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+table tr {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-left: 20px;
+}
+
+tr input {
+    position: absolute;
+    top: 18px;
+    left: 5px;
+}
+
+th,
+td {
+    width: 200px;
+}
+
+td {
+    padding-top: 10px;
+}
+
+.get-back {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    left: 8px;
+    width: 540px;
+    height: 35px;
+    text-align: left;
+    padding-left: 30px;
+    background: url('../icons/back.png') no-repeat scroll 0px 5px;
+    background-color: #FFFFFF;
+}
+
+/* Модальное окно */
+.popup-fade {
+	display: none;
+}
+
+.popup-fade:before {
+	content: '';
+	background: #000;
+	position: fixed; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	opacity: 0.7;
+	z-index: 99;
+}
+
+.popup {
+	position: fixed;
+	top: 40%;
+	left: 37%;
+	padding: 20px;
+	width: 360px;
+	background: #FFFFFF;
+	border: 1px solid #7800FF;
+	border-radius: 4px; 
+	z-index: 99;
+	opacity: 1;	
+}
+
+.popup-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.popup-title {
+    font-size: 24px;
+    font-weight: 600;
+}
